@@ -1,6 +1,10 @@
 console.log("entro a index.js")
 const tbody = document.getElementById('tbody');
 fetch("https://dev4humans.com.mx/api/Clases/ventas_libros")
+// fetch("https://dev4humans.com.mx/api/Clases/ventas_peliculas")
+// fetch("https://dev4humans.com.mx/api/Clases/ventas_platillos")
+// fetch("https://dev4humans.com.mx/api/Clases/ventas_juguetes")
+// fetch("https://dev4humans.com.mx/api/Clases/personales")
 .then(response => response.json())
 .then(datosApi => {
   console.log(datosApi);
