@@ -18,7 +18,7 @@ fetch("https://dev4humans.com.mx/api/Clases/ventas_variadas",
   const ctx = document.getElementById('myChart');
 
   const labels = datosApi.data.labels;
-  const data = datosApi.data.datasets;
+  const datasets = datosApi.data.datasets;
   
 
   //Creación de graficas
@@ -26,27 +26,7 @@ fetch("https://dev4humans.com.mx/api/Clases/ventas_variadas",
       type: 'bar',
       data: {
         labels: labels,
-        datasets: [{
-          label: 'Promedio de ventas diarias',
-          data: data,
-          borderWidth: 1,
-          borderColor:[
-            "#3677D4",
-            "#5FD436",
-            "#D436C5",
-            "#D43636",
-            "#D1D436"
-            
-          ],
-
-          backgroundColor:[
-            "#3677D4",
-            "#5FD436",
-            "#D436C5",
-            "#D43636",
-            "#D1D436"
-          ]
-        }]
+        datasets: datasets,
       },
       options: {
         scales: {
@@ -63,18 +43,18 @@ fetch("https://dev4humans.com.mx/api/Clases/ventas_variadas",
     labels.forEach((label, index) => {
       console.log(index);
       
-      
+      const data = datasets[0];
       tbody.innerHTML += `
-      <tr ${data[index] > 50 ? 'class="table-danger fw-bold"' : ''}>
+      <tr ${data.data[index] >= 100 ? 'class="table-danger"' : ''}>
       <th>${index + 1}</th>
       <th>${label}</th>
-      <th>${data[index]}</th>
+      <th>${data.data[index]}</th>
       </tr>
     `;
-        // const tr = document.createElement("tr");
-        // if(data[index]>50){
-        //   tr.classList.add("table-danger");
-        // }
+        const tr = document.createElement("tr");
+        if(data[index]>50){
+          tr.classList.add("table-danger");
+        }
        
         
         // tr.innerHTML += `
