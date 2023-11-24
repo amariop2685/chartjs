@@ -1,14 +1,19 @@
+console.log("entro a index.js")
 
-    const ctx = document.getElementById('myChart');
+fetch("https://dev4humans.com.mx/api/Clases/ventas_libros")
+.then(response => response.json())
+.then(datosApi => {
+  console.log(datosApi);
+  const ctx = document.getElementById('myChart');
   
     new Chart(ctx, {
       type: 'doughnut',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: datosApi.data.labels,
         datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 10.5],
-          borderWidth: 0.5
+          label: '# of votes',
+          data: datosApi.data.data,
+          borderWidth: 1
         }]
       },
       options: {
@@ -19,3 +24,7 @@
         }
       }
     });
+});
+
+
+    
