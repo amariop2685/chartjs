@@ -21,22 +21,6 @@ axios.get('https://dev4humans.com.mx/api/Clases/personajes')
             borderWidth: 1,
 
 
-          borderColor:[
-            "#3677D4",
-            "#5FD436",
-            "#D436C5",
-            "#D43636",
-            "#D1D436"
-            
-          ],
-
-          backgroundColor:[
-            "#3677D4",
-            "#5FD436",
-            "#D436C5",
-            "#D43636",
-            "#D1D436"
-          ]
         }]            
 
       },
