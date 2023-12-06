@@ -7,6 +7,7 @@ axios.get('http://data.fixer.io/api/latest?access_key='+key)
   console.log(datosApi);
   
   const xData = datosApi.data.rates;
+  const fecha = datosApi.data.date;
   console.log([xData].length);
   const ctx = document.getElementById('myChart');
 
@@ -19,9 +20,11 @@ axios.get('http://data.fixer.io/api/latest?access_key='+key)
       data: {
             labels: xValues,
             datasets: [{
-              label: ["1 "+datosApi.data.base + " equivale a :"],
+              label: [" 1 " + datosApi.data.base + " equivale a : " + fecha],
               data: yValues,
               borderWidth: 2,
+              borderColor: '#31AA56',
+              backgroundColor: '#317F43',
             
             }]
       },
