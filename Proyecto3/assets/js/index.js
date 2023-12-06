@@ -20,7 +20,7 @@ axios.get('http://data.fixer.io/api/latest?access_key='+key)
       data: {
             labels: xValues,
             datasets: [{
-              label: [" 1 " + datosApi.data.base + " equivale a : " + fecha],
+              label: [" 1 " + datosApi.data.base + " equivale al " + fecha],
               data: yValues,
               borderWidth: 2,
               borderColor: '#31AA56',
