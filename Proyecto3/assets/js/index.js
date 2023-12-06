@@ -24,7 +24,7 @@ axios.get('http://data.fixer.io/api/latest?access_key='+key)
               data: yValues,
               borderWidth: 2,
               borderColor: '#31AA56',
-              backgroundColor: '#317F43',
+              backgroundColor: '#87DE34',
             
             }]
       },
