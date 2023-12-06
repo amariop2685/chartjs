@@ -19,9 +19,9 @@ axios.get('http://data.fixer.io/api/latest?access_key='+key)
       data: {
             labels: xValues,
             datasets: [{
-              label: datosApi.data.base,
+              label: ["1 "+datosApi.data.base + " equivale a :"],
               data: yValues,
-              borderWidth: 1,
+              borderWidth: 2,
             
             }]
       },
