@@ -8,11 +8,10 @@ axios.get('http://data.fixer.io/api/latest?access_key='+key)
   
   const xData = datosApi.data.rates;
   const fecha = datosApi.data.date;
-  console.log([xData].length);
   const ctx = document.getElementById('myChart');
 
-  const xValues = ["MXN", "USD", "GBP"];
-  const yValues = [xData.MXN, xData.USD, xData.GBP];
+  const xValues = ["MXN", "USD", "GBP", "CAD"];
+  const yValues = [xData.MXN, xData.USD, xData.GBP, xData.CAD];
   
   //Creación de graficas
     new Chart(ctx, {
