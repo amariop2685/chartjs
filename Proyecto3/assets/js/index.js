@@ -5,35 +5,37 @@ const key = "d8a95dffe1c704f3993ed8ce88a7a747";
 axios.get('http://data.fixer.io/api/latest?access_key='+key)
 .then(datosApi => {
   console.log(datosApi);
-
-
+  
+  const xData = datosApi.data.rates;
+  console.log([xData].length);
   const ctx = document.getElementById('myChart');
 
-  const labels = datosApi.data.base;
-  const data = datosApi.data.rates;
+  const xValues = ["MXN", "USD", "GBP"];
+  const yValues = [xData.MXN, xData.USD, xData.GBP];
   
   //Creación de graficas
     new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: labels,
-          datasets: [{
-              label: 'EUR',
-              data: data,
-              borderWidth: 1
-        
-      }]
-    },
-options: {
-  scales: {
-    y: {
-      beginAtZero: true
+            labels: xValues,
+            datasets: [{
+              label: datosApi.data.base,
+              data: yValues,
+              borderWidth: 1,
+            
+            }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
     }
   }
 }
+    
+    });
+  })
 
 .catch(error => {
   console.error("axios error", error);
-})
-    })
-  });
+});

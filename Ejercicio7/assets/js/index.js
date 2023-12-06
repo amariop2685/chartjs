@@ -19,10 +19,7 @@ axios.get('https://dev4humans.com.mx/api/Clases/personajes')
             label : 'Promedio Ventas Diarias',
             data: data,
             borderWidth: 1,
-
-
         }]            
-
       },
       options: {
         scales: {
@@ -38,31 +35,31 @@ axios.get('https://dev4humans.com.mx/api/Clases/personajes')
 });
     //Creación de datos de tabla
 
-    tbody.innerHTML = "";
+    // tbody.innerHTML = "";
 
-    labels.forEach((label, index) => {
-      console.log(index);
+    // labels.forEach((label, index) => {
+    //   console.log(index);
       
-      const data = datasets[0];
-      tbody.innerHTML += `
-      <tr ${data.data[index] >= 100 ? 'class="table-danger"' : ''}>
-      <th>${index + 1}</th>
-      <th>${label}</th>
-      <th>${data.data[index]}</th>
-      </tr>
-    `;
-        const tr = document.createElement("tr");
-        if(data[index]>50){
-          tr.classList.add("table-danger");
-        }       
+    //   const data = datasets[0];
+    //   tbody.innerHTML += `
+    //   <tr ${data.data[index] >= 100 ? 'class="table-danger"' : ''}>
+    //   <th>${index + 1}</th>
+    //   <th>${label}</th>
+    //   <th>${data.data[index]}</th>
+    //   </tr>
+    // `;
+    //     const tr = document.createElement("tr");
+    //     if(data[index]>50){
+    //       tr.classList.add("table-danger");
+    //     }       
         
-        // tr.innerHTML += `
-        //     <td>${index + 1}</td>
-        //     <td>${label}</td>
-        //     <td>${data[index]}</td>
-        //     `;
-        //     tbody.appendChild(tr);
-    });
+    //     // tr.innerHTML += `
+    //     //     <td>${index + 1}</td>
+    //     //     <td>${label}</td>
+    //     //     <td>${data[index]}</td>
+    //     //     `;
+    //     //     tbody.appendChild(tr);
+    // });
 
 
     
