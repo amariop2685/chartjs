@@ -29,17 +29,33 @@ axios.get('https://dev4humans.com.mx/api/Clases/personajes')
         }
       }
     });
-})
-.catch(error => {
-  console.error("axios error", error);
-});
-    //Creación de datos de tabla
 
-    // tbody.innerHTML = "";
+     //Creación de datos de tabla
+  
+    tbody.innerHTML = "";
+    labels.forEach((label, index) => {
+      console.log(index);
+      const tr = document.createElement("tr");
+      if(data[index]>50){
+        tr.classList.add("table-danger");
+        tr.classList.add("fw-bold");
+      }      
+      tr.innerHTML += `
+          <td>${index + 1}</td>
+          <td>${label}</td>
+          <td>${data[index]}</td>
+      `;
+      tbody.appendChild(tr);
+    });
 
-    // labels.forEach((label, index) => {
-    //   console.log(index);
+  })
+  .catch(error => {
+    console.error("axios error", error);
+  });
       
+// //    
+
+
     //   const data = datasets[0];
     //   tbody.innerHTML += `
     //   <tr ${data.data[index] >= 100 ? 'class="table-danger"' : ''}>
@@ -48,18 +64,10 @@ axios.get('https://dev4humans.com.mx/api/Clases/personajes')
     //   <th>${data.data[index]}</th>
     //   </tr>
     // `;
-    //     const tr = document.createElement("tr");
-    //     if(data[index]>50){
-    //       tr.classList.add("table-danger");
-    //     }       
         
-    //     // tr.innerHTML += `
-    //     //     <td>${index + 1}</td>
-    //     //     <td>${label}</td>
-    //     //     <td>${data[index]}</td>
-    //     //     `;
-    //     //     tbody.appendChild(tr);
-    // });
+        
+       
+   
 
 
     

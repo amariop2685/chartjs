@@ -57,12 +57,12 @@ fetch("https://dev4humans.com.mx/api/Clases/ventas_variadas",
         }
        
         
-        // tr.innerHTML += `
-        //     <td>${index + 1}</td>
-        //     <td>${label}</td>
-        //     <td>${data[index]}</td>
-        //     `;
-        //     tbody.appendChild(tr);
+        tr.innerHTML += `
+            <td>${index + 1}</td>
+            <td>${label}</td>
+            <td>${data[index]}</td>
+            `;
+            tbody.appendChild(tr);
     });
 
   });
