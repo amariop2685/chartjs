@@ -23,7 +23,7 @@ const key = "d8a95dffe1c704f3993ed8ce88a7a747";
   
   try{
 
-axios.get('https://data.fixer.io/api/latest?access_key='+key)
+axios.get('http://data.fixer.io/api/latest?access_key='+key)
 .then(async datosApi => {
   console.log(datosApi);
   
