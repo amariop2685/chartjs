@@ -1,9 +1,5 @@
 console.log("entro a index.js")
 
-
-const cors = require("cors");
-app.use(cors());
-
 function loadData (state, source) {
   return new Promise((resolve,reject)=>{
     if(state == "ok") {
