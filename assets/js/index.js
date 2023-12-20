@@ -34,8 +34,8 @@ axios.get('https://data.fixer.io/api/latest?access_key='+key)
   const fecha = datosApi.data.date;
 
 
-const xValues = ["MXN", "USD", "GBP", "CAD"];
-const yValues = [xData.MXN, xData.USD, xData.GBP, xData.CAD];
+const xValues = ["USD", "GBP", "CAD"];
+const yValues = [xData.USD, xData.GBP, xData.CAD];
 
 const promesa = loadData("ok", yValues);
 
